@@ -1,0 +1,29 @@
+<navbar></navbar>
+<div class="container">
+    <span class="page-header"><h1>Movie</h1></span>
+    <div class="list-group">
+        <div>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">{{movie.infos.original_title}}</h4>
+                <p class="list-group-item-text">{{movie.infos.overview}}</p>
+                <p class="list-group-item-text">
+                    <b>Popularity: </b>{{movie.infos.popularity}}
+                </p>
+                <p class="list-group-item-text">
+                    <b>Release Date: </b>{{movie.infos.release_date}}
+                </p>
+                <p class="list-group-item-text">
+                    <b>TagLine: </b>{{movie.infos.tagline}}
+                </p>
+                <img ng-src="http://image.tmdb.org/t/p/w500/{{movie.infos.poster_path}}" />
+
+                <h2 class="page-header">Actors: </h2>
+                <div ng-repeat="cast in movie.casts" ng-click="clickOnCast(cast.id)">
+                    <a href="#" class="list-group-item">{{cast.name}} </a>
+                </div>
+
+
+        </div>
+    </div>
+</div>
+<footer></footer>

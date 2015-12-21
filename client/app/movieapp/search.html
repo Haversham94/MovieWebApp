@@ -1,0 +1,45 @@
+<navbar></navbar>
+<span class="page-header"><h1>Search</h1></span>
+
+<div class="container">
+
+    <form id="custom-search-form" class="form-search form-horizontal pull-right" name="searchForm" novalidate ng-submit="submitSearch()">
+        <div>
+            <input id="query" ng-model="search.query"></input>
+            <select id="category" ng-model="search.category">
+                <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Search</button>
+
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <div class="list-group" ng-if="search.category == 'movie'">
+        <span><h3>Movie Search result</h3></span>
+        <div ng-repeat="search in searchs" ng-click="clickOnSearchResultMovie(search.id)">
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">{{search.original_title}}</h4>
+                <p class="list-group-item-text">{{search.overview}}</p>
+                <img ng-src="http://image.tmdb.org/t/p/w500/{{search.poster_path}}" />
+            </a>
+        </div>
+    </div>
+    <div class="list-group" ng-if="search.category == 'actor'">
+        <span><h3>Actor Search result</h3></span>
+
+        <div class="list-group-item" ng-repeat="search in searchs" ng-click="clickOnSearchResultActor(search.id)">
+            <img ng-src="http://image.tmdb.org/t/p/w500/{{search.profile_path}}" />
+            <a href="#" class="list-group-item">{{search.name}} </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<footer></footer>

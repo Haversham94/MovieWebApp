@@ -1,0 +1,25 @@
+<navbar></navbar>
+<span>Actor</span>
+<div class="list-group">
+    <div>
+        <a class="list-group-item">
+            <h4 class="list-group-item-heading">{{actor.infos.name}}</h4>
+            <p class="list-group-item-text">{{actor.infos.place_of_birth}}</p>
+            <p class="list-group-item-text">
+                <b>Popularity: </b>{{actor.infos.popularity}}
+            </p>
+            <img ng-src="http://image.tmdb.org/t/p/w500/{{actor.infos.profile_path}}" />
+            <p class="list-group-item-text">
+                <b>Biography: </b>{{actor.infos.biography}}
+            </p>
+            <h4>Movies: </h4>
+            <div ng-repeat="cast in actor.casts" ng-click="clickOnCast(cast.id)">
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">{{cast.original_title}}</h4>
+                    <p class="list-group-item-text">{{cast.overview}}</p>
+                    <img ng-src="http://image.tmdb.org/t/p/w500/{{cast.poster_path}}" />
+                </a>
+            </div>
+    </div>
+</div>
+<footer></footer>

@@ -1,0 +1,17 @@
+<navbar></navbar>
+
+
+<div class="container">
+    <span class="page-header"><h1>Movies</h1></span>
+    <div class="list-group">
+        <div ng-repeat="movie in movies" ng-click="clickOnMovie(movie.id)">
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">{{movie.original_title}}</h4>
+                <p class="list-group-item-text">{{movie.overview}}</p>
+                <img ng-src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer></footer>
