@@ -1,4 +1,4 @@
-# my-new-project
+# Simple Web Application -> using MovieDB API
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.1.1.
 
